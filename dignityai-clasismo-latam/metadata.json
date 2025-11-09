@@ -1,0 +1,61 @@
+{
+  "nombre": "DignityAI-Clasismo-LATAM",
+  "version": "1.0.0",
+  "descripcion": "Dataset de discriminación socioeconómica en español latinoamericano",
+  "total_ejemplos": 27883,
+  "paises": [
+    "México",
+    "Argentina",
+    "Colombia",
+    "Chile",
+    "España"
+  ],
+  "categorias": [
+    "deshumanizacion_directa",
+    "estereotipos_prejuicios",
+    "exclusion_normalizada",
+    "clasismo_aspiracional",
+    "microagresiones_cotidianas",
+    "violencia_simbolica"
+  ],
+  "fecha_generacion": "2025-11-09T04:04:04.033697",
+  "autor": "Antonio Dromundo",
+  "licencia": "CC BY-NC-SA 4.0",
+  "parte_de": "Iniciativa DignityAI",
+  "contacto": {
+    "linkedin": "linkedin.com/in/antonio-dromundo",
+    "twitter": "@antonnDromundo",
+    "github": "github.com/antonnDromundo"
+  },
+  "estadisticas": {
+    "por_pais": {
+      "México": 5883,
+      "Argentina": 5712,
+      "Colombia": 5594,
+      "Chile": 5401,
+      "España": 5293
+    },
+    "por_categoria": {
+      "deshumanizacion_directa": 5657,
+      "estereotipos_prejuicios": 5617,
+      "clasismo_aspiracional": 4201,
+      "microagresiones_cotidianas": 4177,
+      "violencia_simbolica": 4126,
+      "exclusion_normalizada": 4105
+    },
+    "por_contexto": {
+      "interaccion_servicio_cliente": 2375,
+      "grupo_whatsapp": 2371,
+      "comentario_youtube": 2370,
+      "foro_online": 2362,
+      "conversacion_laboral": 2358,
+      "medios_comunicacion": 2335,
+      "entorno_educativo": 2334,
+      "discusion_familiar": 2297,
+      "espacio_publico": 2297,
+      "app_citas": 2292,
+      "comentario_redes_sociales": 2277,
+      "comentario_politico": 2215
+    }
+  }
+}
