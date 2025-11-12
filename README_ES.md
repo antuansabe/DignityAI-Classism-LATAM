@@ -397,9 +397,6 @@ Templates × Variables × Contextos × Países = 27,883 combinaciones únicas
 ```
 
 ### Ventajas:
-- ⚡ **Generación rápida** (~1 segundo total)
-- 💰 **Cero costos de API** ($0 gastados)
-- 🎲 **Alta variabilidad natural** de combinaciones
 - ⚖️ **Balance perfecto** en todas las dimensiones
 - 🌎 **Expresiones regionales auténticas** de hablantes nativos
 - 🔄 **Metodología reproducible**
