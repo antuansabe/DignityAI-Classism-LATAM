@@ -4,7 +4,7 @@
 
 **Advertencia de contenido.** Este dataset contiene lenguaje de discriminación socioeconómica (clasismo) explícito y sutil. Existe para entrenar y evaluar sistemas que **detectan** discriminación, nunca para generarla.
 
-**Estado:** 🛑 datos sintéticos · 🛑 sin validación comunitaria · versión recomendada **1.1**
+**Estado:** 🛑 datos sintéticos · ✅ contrastado con datos reales (nov 2026) · versión recomendada **1.1** · también en [Hugging Face](https://huggingface.co/datasets/antonn-dromundo/DignityAI-Clasismo-LATAM)
 
 *English summary: synthetic, template-based Spanish dataset on socioeconomic discrimination (classism) across 5 countries, with contrastive non-discriminatory alternatives. Version 1.1 removes duplicates and near-duplicates and provides leakage-free splits. Best used for stress-testing and taxonomy work, not as the sole training source for a detector. License CC BY-NC-SA 4.0.*
 
@@ -65,12 +65,29 @@ Textos discriminatorios únicos por país:
 
 Que un modelo tan simple llegue a ~0.99 significa que los textos se distinguen por el estilo de la plantilla, no por comprensión. **La fila de subcategorías no vistas es la cifra honesta de generalización.**
 
+## Validación externa (noviembre 2026)
+
+Contrastamos el dataset con datos reales escritos y anotados por personas. Scripts y resultados: [DignityAI-Validacion](https://huggingface.co/datasets/antonn-dromundo/DignityAI-Validacion).
+
+| Prueba | Resultado |
+|---|---|
+| Revisión independiente de etiquetas (muestra de 40, revisor: Claude Opus 5.5, **no humano**) | **75%** claramente discriminatorios, 15% ambiguos, 10% no discriminatorios; 100% de contrastes correctos |
+| Modelo entrenado con ~57,000 comentarios reales anotados por humanos ([UBA](https://huggingface.co/piuba-bigdata/beto-contextualized-hate-speech)) | Reconoce como odio el **11%** de nuestros textos (como clasismo: 5%). En datos reales detecta el 41% del clasismo. Falsas alarmas en contrastes: 0% |
+| Entrenar solo con este dataset y probar en comentarios reales | F1 0.092 (entrenando con datos reales: 0.550) |
+| Agregar este dataset a datos reales (0% / 10% / 100%) | F1 0.571 / 0.573 / 0.544 |
+
+El clasismo sutil (aspiracional, microagresiones, violencia simbólica) es casi invisible para el modelo: lo reconoce en 6 a 7% de los casos.
+
+**Conclusión:** las etiquetas son mayormente correctas y el dataset captura formas de clasismo que los modelos entrenados con datos reales no reconocen. Por eso **sirve para evaluar** detectores y LLMs. **No sirve para entrenar** ni para aumentar datos reales.
+
+**Valídalo tú:** si perteneces a una comunidad afectada o investigas el tema, usa el [kit de validación humana](https://huggingface.co/datasets/antonn-dromundo/DignityAI-Validacion/tree/main/kit) (240 textos, guía de una página).
+
 ## Limitaciones medidas
 
 - **Es sintético.** Las plantillas no capturan la variedad del lenguaje real. El ruido (typos, abreviaturas, risas) se añadió con un script solo al lado discriminatorio, así que un modelo puede aprender que "escribir informal" = discriminación.
 - **Los contrastes son pocos.** Solo 867 textos de contraste únicos frente a 18,320 discriminatorios (longitud mediana 38 vs. 39 caracteres).
 - **La v1.0 tenía fuga.** Sus splits repetían en prueba casi el 100% de los textos de contraste de entrenamiento. Por eso existe la v1.1.
-- **Sin validación comunitaria.** Ninguna organización ni comunidad afectada ha revisado los ejemplos todavía.
+- **Validación comunitaria pendiente.** La revisión de etiquetas la hizo un modelo; falta que personas de las comunidades afectadas anoten el kit.
 
 ### Qué no cubre
 
@@ -90,9 +107,9 @@ test = pd.read_csv(f"{base}/test.csv")
 print(train.groupby(["pais", "categoria"]).size())
 ```
 
-**Usos recomendados:** pruebas de estrés de detectores y LLMs, estudio de la taxonomía, materiales de formación con advertencia de contenido, aumento de datos **junto con** corpus reales (ver el [directorio de datos reales](https://sin-odio.vercel.app/dignityai#directorio)).
+**Usos recomendados:** evaluar detectores y LLMs en discriminación sutil y regional, estudio de la taxonomía, materiales de formación con advertencia de contenido, comparación con corpus reales (ver el [directorio de datos reales](https://sin-odio.vercel.app/dignityai#directorio)).
 
-**No lo uses para:** generar contenido discriminatorio, entrenar un detector solo con estos datos, tomar decisiones automáticas sobre personas o fines comerciales sin autorización.
+**No lo uses para:** generar contenido discriminatorio, entrenar o aumentar datos de un detector, tomar decisiones automáticas sobre personas o fines comerciales sin autorización.
 
 ## Licencia
 
