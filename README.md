@@ -84,7 +84,7 @@ Que un modelo tan simple llegue a ~0.99 significa que los textos se distinguen p
 ```python
 import pandas as pd
 
-base = "https://raw.githubusercontent.com/antuansabe/DignityAI-Classism-LATAM/main/v1.1"
+base = "https://raw.githubusercontent.com/antuansabe/DignityAI-Classism-LATAM/HEAD/v1.1"
 train = pd.read_csv(f"{base}/train.csv")
 test = pd.read_csv(f"{base}/test.csv")
 print(train.groupby(["pais", "categoria"]).size())
