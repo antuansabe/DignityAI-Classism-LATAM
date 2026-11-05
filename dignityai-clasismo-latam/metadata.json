@@ -23,9 +23,10 @@
   "licencia": "CC BY-NC-SA 4.0",
   "parte_de": "Iniciativa DignityAI",
   "contacto": {
-    "linkedin": "linkedin.com/in/antonio-dromundo",
-    "twitter": "@antonnDromundo",
-    "github": "github.com/antonnDromundo"
+    "email": "antuansabe@gmail.com",
+    "github": "https://github.com/antuansabe",
+    "huggingface": "https://huggingface.co/antonn-dromundo",
+    "linkedin": "https://www.linkedin.com/in/antonndromundo/"
   },
   "estadisticas": {
     "por_pais": {
@@ -57,5 +58,7 @@
       "comentario_redes_sociales": 2277,
       "comentario_politico": 2215
     }
-  }
+  },
+  "advertencia_calidad": "Ver README: versión 1.1 recomendada; los splits de 1.0 tienen fuga entre train y test.",
+  "version_recomendada": "1.1.0 (carpeta v1.1/)"
 }

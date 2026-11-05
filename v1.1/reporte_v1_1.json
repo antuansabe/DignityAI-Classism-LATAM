@@ -1,0 +1,43 @@
+{
+  "version": "1.1.0",
+  "fuente": "dignityai-clasismo-latam",
+  "filas_v1_0_pares": 27883,
+  "textos_formato_largo": 55766,
+  "tras_quitar_duplicados_exactos": 22305,
+  "tras_quitar_casi_duplicados": 19187,
+  "esqueletos_con_etiqueta_contradictoria_descartados": 0,
+  "por_etiqueta": {
+    "discriminatorio": 18320,
+    "contraste": 867
+  },
+  "splits": {
+    "train": 13430,
+    "validation": 2878,
+    "test": 2879
+  },
+  "fuga_test_train_esqueleto_pct": 0.0,
+  "por_pais_discriminatorio": {
+    "México": 4481,
+    "Argentina": 3679,
+    "Colombia": 3480,
+    "Chile": 3344,
+    "España": 3336
+  },
+  "por_categoria_discriminatorio": {
+    "estereotipos_prejuicios": 3957,
+    "deshumanizacion_directa": 3579,
+    "exclusion_normalizada": 2879,
+    "clasismo_aspiracional": 2845,
+    "violencia_simbolica": 2596,
+    "microagresiones_cotidianas": 2464
+  },
+  "baselines_tfidf_logreg_macro_f1": {
+    "binario_split_v1_1": 0.998,
+    "binario_subcategorias_no_vistas": 0.913,
+    "categoria_5_6_clases": 0.998
+  },
+  "longitud_mediana_caracteres": {
+    "discriminatorio": 39,
+    "contraste": 38
+  }
+}
