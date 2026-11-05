@@ -1292,9 +1292,8 @@ def exportar_dataset(df, output_dir="dignityai-clasismo-latam"):
         "licencia": "CC BY-NC-SA 4.0",
         "parte_de": "Iniciativa DignityAI",
         "contacto": {
-            "linkedin": "linkedin.com/in/antonio-dromundo",
-            "twitter": "@antonnDromundo",
-            "github": "github.com/antonnDromundo"
+            "linkedin": "https://www.linkedin.com/in/antonndromundo/",
+            "github": "https://github.com/antuansabe"
         },
         "estadisticas": {
             "por_pais": df['pais'].value_counts().to_dict(),
@@ -1368,7 +1367,7 @@ def main():
     print("   2. Ajustar templates si es necesario")
     print("   3. Subir a GitHub repository")
     print("   4. Publicar en HuggingFace")
-    print("   5. Anunciar en LinkedIn/Twitter con #DignityAI")
+    print("   5. Anunciar en LinkedIn con #DignityAI")
     print("   6. ¡Celebrar tu contribución a la justicia social! 🎊")
 
     print("\n" + "=" * 70)
